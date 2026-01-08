@@ -1,0 +1,12 @@
+{
+  "name": "api-order",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "bun index.js",
+    "dev": "bun --watch index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

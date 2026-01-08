@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  api-login:
+    build: ./api-login
+    volumes:
+      - ./api-login:/app
+      - /app/node_modules
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+
+  api-order:
+    build: ./api-order
+    volumes:
+      - ./api-order:/app
+      - /app/node_modules
+    ports:
+      - "3003:3003"
+
+  api-gateway:
+    image: api-gateway-dev
+    build:
+      context: ./api-gateway
+    volumes:
+      - ./api-gateway:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
